@@ -19,10 +19,6 @@
 #include <stack>
 #include <iomanip>
 #include <fstream>
-// for big integers #include <boost/multiprecision/cpp_int.hpp> 
-// for big integers using namespace boost::multiprecision; 
-// use cpp_int as data type to handle the data
-// cpp_int count = 1;
  
 using namespace std;
  
@@ -87,28 +83,23 @@ double eps = 1e-12;
 //k+=n[i];
 //cout<<stoi(k)<<endl;:
 
-void solve()
+void solve() 
+
 {
-    int a;
-    float b;
-    cin>>a>>b;
-    if(a%5==0 && b>=(a+0.50))
-        cout<<b-a-0.5<<endl;
-        // cout<<fixed<<setprecision(2)<<b-a-0.50<<endl;
-    else
-        cout<<b<<endl;
-        // cout<<fixed<<setprecision(2)<<b<<endl;
+    int n,a,b;
+    cin>>n>>a>>b;
+    cout<<log2(n)*a+(log2(n)-1)*b<<endl;
 }
 int main()
   {
   fast_cin();
-  //ll t;
- // cin >> t;
- // for(int i=0;i<t;i++)
+  ll t;
+  cin >> t;
+  for(int i=0;i<t;i++)
 // cout << "Case #" << it+1 << ": ";
-  //{
-  //solve();
-  //}
-solve();
+  {
+  solve();
+  }
+//solve();
   return 0;
 }
