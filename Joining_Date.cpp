@@ -1,6 +1,3 @@
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
 #include <bits/stdc++.h> 
 #include <complex>
 #include <queue>
@@ -52,6 +49,7 @@ double eps = 1e-12;
 #define sz(x) ((ll)(x).size())
  //priority in (),*,/ should be kept in consideration.
  //can also use a+b>2*c , don't need to use double;
+ 
 // can use sum of integers while checking the multiple integers value
 // be aware of integer divisions while needing the double value, cast them as doubles,floats
  
@@ -83,12 +81,21 @@ double eps = 1e-12;
 //k+=n[i];
 //cout<<stoi(k)<<endl;:
 
-void solve() 
 
+void solve()
 {
-    int n,a,b;
-    cin>>n>>a>>b;
-    cout<<log2(n)*a+(log2(n)-1)*b<<endl;
+    int n,k;
+    cin>>n>>k;
+    cout<<ceil(n/5.0)-ceil(k/5.0)<<endl;
+    /*
+    Observation is number of candidate who give interview on the same day in which the 
+    candidate who refuses the offer will not be changed and the number of candidate whose
+     interview day changes will equal to total days minus days including the candidate 
+     whose interview day not changes. e.g: 14 2 here n=14,k=2 therefore candidate number
+      1 to 5 not get affected,unchange day=k/5+1=1.Total days=3. affected candidate 6 
+      and 11=3-1=2.
+    */
+   // always only 1 candidates from pair of 5 after the kth value will be affected
 }
 int main()
   {
@@ -100,6 +107,5 @@ int main()
   {
   solve();
   }
-//solve();
   return 0;
 }

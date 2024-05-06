@@ -1,6 +1,3 @@
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
 #include <bits/stdc++.h> 
 #include <complex>
 #include <queue>
@@ -19,10 +16,6 @@
 #include <stack>
 #include <iomanip>
 #include <fstream>
-// for big integers #include <boost/multiprecision/cpp_int.hpp> 
-// for big integers using namespace boost::multiprecision; 
-// use cpp_int as data type to handle the data
-// cpp_int count = 1;
  
 using namespace std;
  
@@ -56,6 +49,7 @@ double eps = 1e-12;
 #define sz(x) ((ll)(x).size())
  //priority in (),*,/ should be kept in consideration.
  //can also use a+b>2*c , don't need to use double;
+ 
 // can use sum of integers while checking the multiple integers value
 // be aware of integer divisions while needing the double value, cast them as doubles,floats
  
@@ -87,41 +81,17 @@ double eps = 1e-12;
 //k+=n[i];
 //cout<<stoi(k)<<endl;:
 
+
 void solve()
 {
-  int n;
-  cin>>n;
-  // cpp_int count = 1;
-	// for(int i = 1; i<=n; i++)
-	// {
-	//        count = count *i;
-	       
-	// }
-	// cout <<count<<endl;
-  // concept of big int
-  vector<int>ans;
-    ans.push_back(1);
-    int carry=0;
-    int x,digit;
-    
-    for(int i=2;i<=n;i++){
-        for(int j=0;j<ans.size();j++){
-            x=ans[j]*i+carry;
-            ans[j]=x%10;
-            carry=x/10;
-        }
-        
-        while(carry){
-            ans.push_back(carry%10);
-            carry=carry/10;
-        }
-    }
-    
-    reverse(ans.begin(),ans.end());
-
-    for(auto i:ans){
-        cout<<i;
-    }cout<<"\n";
+    int n;
+    cin>>n;
+    // if(n%2==0)
+    // cout<<n*3/2<<endl;
+    // else
+    // cout<<n*3/2-1<<endl;
+    ll ans=3*(n-1)-ceil((double)(n-2)/2)*3;
+    cout<<ans<<endl;
 }
 int main()
   {
@@ -133,6 +103,5 @@ int main()
   {
   solve();
   }
-//solve();
   return 0;
 }

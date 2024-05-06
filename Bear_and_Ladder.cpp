@@ -1,6 +1,3 @@
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
 #include <bits/stdc++.h> 
 #include <complex>
 #include <queue>
@@ -52,6 +49,7 @@ double eps = 1e-12;
 #define sz(x) ((ll)(x).size())
  //priority in (),*,/ should be kept in consideration.
  //can also use a+b>2*c , don't need to use double;
+ 
 // can use sum of integers while checking the multiple integers value
 // be aware of integer divisions while needing the double value, cast them as doubles,floats
  
@@ -83,19 +81,29 @@ double eps = 1e-12;
 //k+=n[i];
 //cout<<stoi(k)<<endl;:
 
+
 void solve()
 {
     int a,b;
     cin>>a>>b;
-    int v1{},v2{},v3{},v4{};
-    v1=500-2*a;
-    v2=500-2*(a+b);
-    v3=1000-4*b;
-    v4=1000-4*(a+b);
-    if((v1+v4)>(v2+v3))
-    cout<<v1+v4<<endl;
+    if(a%2==0 && b%2==0 && abs(a-b)==2)
+    cout<<"YES"<<endl;
+    else if(a%2!=0 && b%2!=0 && abs(a-b)==2)
+    cout<<"YES"<<endl;
+    else if((a-1)%2==0 && (b-2)%2==0  && min(a,b)%2!=0 && abs(a-b)==1)
+    cout<<"YES"<<endl;
+    else if((a-2)%2==0 && (b-1)%2==0 && min(a,b)%2!=0 && abs(a-b)==1)
+    cout<<"YES"<<endl;
     else
-    cout<<v2+v3<<endl;
+    cout<<"NO"<<endl;
+    // if(a%2==0)
+	  //   {
+	  //       b==a-1 || b==a+2 || b==a-2 ?  cout<<"YES"<<endl :   cout<<"NO"<<endl;
+	  //   }
+	  //   else
+	  //   {
+	  //       b==a+1 || b==a+2 || b==a-2 ?  cout<<"YES"<<endl :   cout<<"NO"<<endl;
+	  //   }
 }
 int main()
   {
@@ -107,6 +115,5 @@ int main()
   {
   solve();
   }
-//solve();
   return 0;
 }

@@ -1,6 +1,3 @@
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
 #include <bits/stdc++.h> 
 #include <complex>
 #include <queue>
@@ -52,6 +49,7 @@ double eps = 1e-12;
 #define sz(x) ((ll)(x).size())
  //priority in (),*,/ should be kept in consideration.
  //can also use a+b>2*c , don't need to use double;
+ 
 // can use sum of integers while checking the multiple integers value
 // be aware of integer divisions while needing the double value, cast them as doubles,floats
  
@@ -83,22 +81,24 @@ double eps = 1e-12;
 //k+=n[i];
 //cout<<stoi(k)<<endl;:
 
+
 void solve()
 {
-    int n;
+    ll n;
     cin>>n;
-    int a[n],sum{};
-    for(int i=0; i<n; i++)
-    {
-    cin>>a[i];
-    sum+=a[i];
-    }
-    if(sum==0)
-    cout<<0<<endl;
-    else if(sum%2!=0)
-    cout<<-1<<endl;
+    // if(n==6)
+    // cout<<1<<endl;
+    // else if(n<6)
+    // cout<<0<<endl;
+    // else
+    // {
+    //   n-=6;
+    //   cout<<n/7+1<<endl;
+    // }
+    if(n%7==6)
+    cout<<n/7+1<<endl;
     else
-    cout<<abs(sum/2)<<endl;
+    cout<<n/7<<endl;
 }
 int main()
   {
@@ -110,6 +110,5 @@ int main()
   {
   solve();
   }
-//solve();
   return 0;
 }

@@ -1,6 +1,3 @@
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
 #include <bits/stdc++.h> 
 #include <complex>
 #include <queue>
@@ -52,6 +49,7 @@ double eps = 1e-12;
 #define sz(x) ((ll)(x).size())
  //priority in (),*,/ should be kept in consideration.
  //can also use a+b>2*c , don't need to use double;
+ 
 // can use sum of integers while checking the multiple integers value
 // be aware of integer divisions while needing the double value, cast them as doubles,floats
  
@@ -83,46 +81,25 @@ double eps = 1e-12;
 //k+=n[i];
 //cout<<stoi(k)<<endl;:
 
+
 void solve()
 {
-    int n;
-    cin>>n;
-    ll sum1{},sum2{},diff{},win{};
-    for(int i=0; i<n; i++)
-    {
-        int a,b;
-        cin>>a>>b;
-        sum1+=a;
-        sum2+=b;
-        if(sum1>sum2)
-        {
-            if((sum1-sum2)>diff)
-            {
-            diff=max(diff,sum1-sum2);
-            win=1;
-            }
-        }
-        else if(sum2>sum1)
-        {
-            if((sum2-sum1)>diff)
-            {
-            diff=max(diff,sum2-sum1);
-            win=2;
-            }
-        }
-    }
-    cout<<win<<" "<<diff<<endl;
+  int n;
+  cin>>n;
+  if(n==1 || n==3 || n==5)
+  cout<<"NO"<<endl;
+  else
+  cout<<"YES"<<endl;
 }
 int main()
   {
   fast_cin();
-//   ll t;
-//   cin >> t;
-//   for(int i=0;i<t;i++)
-// // cout << "Case #" << it+1 << ": ";
-//   {
-//   solve();
-//   }
-solve();
+  ll t;
+  cin >> t;
+  for(int i=0;i<t;i++)
+// cout << "Case #" << it+1 << ": ";
+  {
+  solve();
+  }
   return 0;
-}   
+}
